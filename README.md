@@ -53,6 +53,29 @@ A[User] --> B[Django Views + Template]
 B --> C[Django Models]
 C --> D[Database]
 
+# clone repo
+git clone https://github.com/ajipangestuu/los-pollos-hermanos.git
+
+# masuk folder
+cd los-pollos-hermanos
+
+# install virtualenv (kalau belum ada)
+pip install virtualenv
+
+# buat virtual environment
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+# install dependencies
+pip install -r requirements.txt
+
+# migrasi database
+python manage.py migrate
+
+# jalankan server
+python manage.py runserver
+
 ✨ Credits
 
 Made with ❤️ by Kelompok Los Pollos Hermanos Team
