@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="home" class="section-home section-menu">
+  <div class="section-home_content">
+    <h1 class="section-home_title">Welcome to <span>Los Pollos Hermanos</span>, where Flavors lives!</h1>
+    <div class="section-home_buttons">
+      <a href="{% url 'contact' %}" class="primary-button">Contact us</a>
+      <a href="{% url 'about' %}" class="light-button">About us</a>
+    </div>
+  </div>
+  <img class="section-home_images" src="{% static 'img/gus-new.png' %}" alt="Gus Fring" />
+</section>
+{% endblock %}

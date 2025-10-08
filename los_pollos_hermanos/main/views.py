@@ -2,8 +2,12 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .models import Menu
 
-def home(request):
-    return render(request, 'home.html')
+def index(request):
+    return render(request, 'index.html')
+
+def menus(request):
+    menu_list = Menu.objects.all()
+    return render(request, 'menus.html', {'menu_list': menu_list})
 
 def about(request):
     return render(request, 'about.html')
@@ -13,7 +17,6 @@ def order(request):
     cart = request.session.get("cart", {})
     total = sum(item["harga"] * item["qty"] for item in cart.values())
 
-    # tambah item ke cart
     if request.method == "POST" and "add" in request.POST:
         menu_id = request.POST.get("add")
         menu = Menu.objects.get(id=menu_id)
@@ -24,7 +27,6 @@ def order(request):
         request.session["cart"] = cart
         return redirect("order")
 
-    # hapus item dari cart
     if request.method == "POST" and "remove" in request.POST:
         menu_id = request.POST.get("remove")
         if str(menu_id) in cart:
@@ -32,7 +34,6 @@ def order(request):
         request.session["cart"] = cart
         return redirect("order")
 
-    # checkout
     success = False
     if request.method == "POST" and "checkout" in request.POST:
         customer_email = request.POST.get("email")
@@ -52,5 +53,6 @@ def order(request):
         "total": total,
         "success": success
     })
+
 def contact(request):
     return render(request, 'contact.html')

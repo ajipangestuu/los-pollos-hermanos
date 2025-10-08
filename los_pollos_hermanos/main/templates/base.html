@@ -1,25 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Los Pollos Hermanos</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; }
-        nav { background: #ffcc00; padding: 10px; }
-        nav a { margin: 10px; text-decoration: none; color: #333; font-weight: bold; }
-        nav a:hover { color: red; }
-        .container { padding: 20px; }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About Us</a>
-        <a href="{% url 'order' %}">Order</a>
-        <a href="{% url 'contact' %}">Contact</a>
-    </nav>
-    <div class="container">
-        {% block content %}
-        {% endblock %}
-    </div>
-</body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header_title">Los <span>Pollos</span> Hermanos</h1>
+      <ul class="header_menus">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'menus' %}">Menus</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'order' %}">Order</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </header>
+
+    {% block content %}{% endblock %}
+  </body>
 </html>
