@@ -24,13 +24,14 @@ html {
   /*RADIUS*/
   --small-radius: 8px;
   --medium-radis: 16px;
-  --large-raius: 24px;
+  --large-radius: 24px;
 }
 
 /* COMPONENTS */
 .section-menu {
   padding-inline: 5%;
   padding-block: 100px;
+  background: linear-gradient(to right, rgb(255, 255, 255), var(--background-primary-color));
 }
 
 .primary-button,
@@ -41,6 +42,20 @@ html {
   border: none;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.hover-icon-right:hover i {
+  transform: translateX(4px);
+}
+
+.primary-button i,
+.light-button i {
+  font-size: 24px;
+  transition: 300ms ease;
 }
 
 .primary-button {
@@ -55,6 +70,21 @@ html {
   border: 4px solid var(--border-primary-color);
 }
 
+.section-title {
+  font-family: "Praise", cursive;
+  font-size: 50px;
+  color: var(--primary-color);
+}
+
+.section-title span {
+  font-family: "Praise", cursive;
+  font-size: 50px;
+  color: var(--primary-color);
+}
+
+.section-desc {
+  font-size: 20px;
+}
 /* END COMPONENTS/
 
 
@@ -68,8 +98,9 @@ html {
   align-items: center;
   position: fixed;
   width: 100%;
-  background: linear-gradient(to rigt, white, var(--background-primary-color));
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, white, var(--background-primary-color));
+  box-shadow: 0px 0px 10px rgba(174, 27, 27, 0.1);
+  z-index: 999;
 }
 
 .header_title {
@@ -116,10 +147,11 @@ html {
   border: solid;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, white, var(--background-primary-color));
+  background: linear-gradient(to right, rgb(255, 255, 255), var(--background-primary-color));
   gap: 80px;
   min-height: 100dvh;
   justify-content: space-between;
+  border: none;
 }
 
 .section-home_title {
@@ -143,3 +175,145 @@ html {
   max-width: 700px;
 }
 /*END SECTION HOME*/
+
+/*SECTION MENUS*/
+.section-menus .section-title,
+.section-menus .section-desc {
+  text-align: center;
+}
+
+.section-menus__cards {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.section-menus__card {
+  border: 3px solid var(--border-primary-color);
+  width: 280px;
+  border-radius: var(--medium-radis);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 280px;
+  justify-content: end;
+  margin-top: 64px;
+  cursor: pointer;
+  padding: 24px;
+  transition: 250ms ease;
+}
+
+.section-menus__card:hover {
+  background: var(--primary-color);
+  color: white;
+  margin-top: 55px;
+  box-shadow: 0px 0px 40px rgb(0, 0, 0, 0.15);
+}
+
+.section-menus__card-image {
+  width: 170px;
+}
+
+.section-menus__card-title {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+.section-menus__card-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.section-menus__card-rating i {
+  color: #ffd600;
+  font-size: 20px;
+}
+
+.section-menus__card-rating span {
+  margin-left: 4px;
+  font-size: 20px;
+}
+
+.section-menus__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 14px;
+}
+.section-menus__card-price {
+  font-size: 600;
+}
+
+.section-menus__card-section--buy {
+  border-radius: var(--large-radius);
+}
+
+/*END SECTION MENUS*/
+
+/* SECTION ABOUT */
+.section-about {
+  display: flex;
+  gap: 60px;
+  background: linear-gradient(to right, white, var(--background-primary-color));
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-about__content {
+  max-width: 600px;
+}
+
+.section-about__image {
+  max-height: 300px;
+  max-width: 500px;
+  object-fit: scale-down;
+}
+
+.section-about__stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section-about__stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-about__stat-number {
+  font-size: 36px;
+  color: var(--primary-color);
+}
+
+.section-about__stat-desc {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.section-about__stat-title {
+  color: var(--secondary-color);
+}
+
+.section-about__image-background-1 {
+  margin-top: 20px;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  max-width: 500px;
+}
+
+.section-about__image-background-2 {
+  margin-top: 20px;
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  max-width: 300px;
+}

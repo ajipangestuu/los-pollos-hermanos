@@ -1,12 +1,74 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% include "about.html" %} {% block content %}
 <section id="home" class="section-home section-menu">
   <div class="section-home_content">
     <h1 class="section-home_title">Welcome to <span>Los Pollos Hermanos</span>, where Flavors lives!</h1>
     <div class="section-home_buttons">
       <a href="{% url 'contact' %}" class="primary-button">Contact us</a>
-      <a href="{% url 'about' %}" class="light-button">About us</a>
+      <a href="{% url 'about' %}" class="light-button hover-icon-right">
+        About us
+        <i class="bx bx-right-arrow-alt"></i>
+      </a>
     </div>
   </div>
   <img class="section-home_images" src="{% static 'img/gus-new.png' %}" alt="Gus Fring" />
 </section>
+<section class="section-menus section-menu" id="menus">
+  <h1 class="section-title">Our <span>Menus</span></h1>
+  <p class="section-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis et unde, iure autem soluta optio tempora quidem adipisci officia ea modi quod. Quos rerum cupiditate accusamus recusandae minus quod ipsum?</p>
+  <div class="section-menus__cards">
+    <!--CARD 1-->
+    <div class="section-menus__card">
+      <img class="section-menus__card-image" src="{% static 'img/blue-mint.png' %}" alt="Meth" />
+      <h3 class="section-menus__card-title">Blue Meth</h3>
+      <div class="section-menus__card-rating">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <span>5.1</span>
+      </div>
+      <div class="section-menus__card-footer">
+        <h2 class="section-menus__card-price">$4.13</h2>
+        <button class="section-menus__card-section--buy primary-button">
+          <i class="bx bxs-cart"></i>
+        </button>
+      </div>
+    </div>
+    <div class="section-menus__card">
+      <img class="section-menus__card-image" src="{% static 'img/blue-mint.png' %}" alt="Meth" />
+      <h3 class="section-menus__card-title">Blue Meth</h3>
+      <div class="section-menus__card-rating">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <span>5.1</span>
+      </div>
+      <div class="section-menus__card-footer">
+        <h2 class="section-menus__card-price">$8.13</h2>
+        <button class="section-menus__card-section--buy primary-button">
+          <i class="bx bxs-cart"></i>
+        </button>
+      </div>
+    </div>
+    <div class="section-menus__card">
+      <img class="section-menus__card-image" src="{% static 'img/blue-mint.png' %}" alt="Meth" />
+      <h3 class="section-menus__card-title">Blue Meth</h3>
+      <div class="section-menus__card-rating">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <span>5.1</span>
+      </div>
+      <div class="section-menus__card-footer">
+        <h2 class="section-menus__card-price">$7.31</h2>
+        <button class="section-menus__card-section--buy primary-button">
+          <i class="bx bxs-cart"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "components/section-about.html" %}
 {% endblock %}

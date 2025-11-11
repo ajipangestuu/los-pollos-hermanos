@@ -1,11 +1,10 @@
-{% extends "base.html" %} {% load static %} {% block content %} {% include "components/section-about.html" %}
+{% load static %}
 <section id="about" class="section-about section-menu">
   <img class="section-about__image" src="{% static 'img/mike.png' %}" alt="" />
+
   <div class="section-about__content">
     <h1 class="section-title">About <span> Us</span></h1>
-    <p class="section-desc">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. A vel, cumque neque doloremque beatae deleniti, maxime, deserunt laboriosam tenetur ipsam maiores nostrum earum. Asperiores ducimus dolore voluptates itaque dolor aut.
-    </p>
+    <p class="section-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur illum, minima nulla officiis at optio facere quasi aliquid a ipsum hic quam praesentium quidem illo repellendus deserunt? Laudantium, harum corporis?</p>
 
     <div class="section-about__stats">
       <div class="section-about__stat">
@@ -15,6 +14,7 @@
           <h3 class="section-about__stat-title">EXPEREINCE</h3>
         </div>
       </div>
+
       <div class="section-about__stat">
         <h1 class="section-about__stat-number">15</h1>
         <div class="section-about__stat-text">
@@ -30,8 +30,6 @@
     </button>
   </div>
 
-  <img class="section-about__image-background-1" src="{% static 'img/burger-about.png' %}" />
-  <img class="section-about__image-background-2" src="{% static 'img/chiken-about.png' %}" />
+  <img class="section-about__image-background-1" src="{% static 'img/burger-about.png' %}">
+  <img class="section-about__image-background-2" src="{% static 'img/chiken-about.png' %}">
 </section>
-
-{% endblock %}
