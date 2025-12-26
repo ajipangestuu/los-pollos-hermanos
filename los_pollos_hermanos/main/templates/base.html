@@ -13,12 +13,83 @@
       <h1 class="header_title">Los <span>Pollos</span> Hermanos</h1>
       <ul class="header_menus">
         <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'menus' %}">Menus</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="#menus">Menus</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="{% url 'order' %}">Order</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="header__menu-toggle">
+        <i class="bx bx-menu"></i>
+        <i class="bx bx-x"></i>
+      </div>
     </header>
     {% block content %}{% endblock %}
   </body>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal({ reset: true, delay: 300, distance: "60px", duration: 1500 });
+
+    //COMPONENTS
+
+    ScrollReveal().reveal(".section-title");
+    ScrollReveal().reveal(".section-desc", {
+      delay: 600,
+      duration: 2500,
+    });
+
+    //SECTION HOME//
+    ScrollReveal().reveal(".section-home_title");
+    ScrollReveal().reveal(".section-home_images", {
+      origin: "right",
+    });
+    ScrollReveal().reveal(".section-home_buttons", {
+      delay: 600,
+    });
+
+    //SECTION MENUS
+    ScrollReveal().reveal(".section-menus__card", {
+      interval: 300,
+    });
+    //SECTION ABOUT
+    ScrollReveal().reveal(".section-about__image", {
+      delay: 900,
+      origin: "left",
+    });
+
+    ScrollReveal().reveal(".section-about__stat", {
+      delay: 1200,
+      interval: 300,
+    });
+
+    ScrollReveal().reveal(".section-about .primary-button", {
+      duration: 3000,
+      delay: 1200,
+    });
+
+    //SECTION SERVICES
+    ScrollReveal().reveal(".section-services_card", {
+      delay: 1200,
+      interval: 300,
+    });
+
+    //SECTION CONTACT
+    ScrollReveal().reveal(".section-contact__info-item", {
+      delay: 1200,
+      interval: 300,
+    });
+
+    ScrollReveal().reveal(".section-contact__form", {
+      delay: 1800,
+      duration: 3000,
+    });
+  </script>
+  <script>
+    const headerMenuToggle = document.querySelector(".header__menu-toggle");
+
+    const headerMenus = document.querySelector(".header_menus");
+
+    headerMenuToggle.addEventListener("click", () => {
+      headerMenus.classList.toggle("active");
+    });
+  </script>
 </html>

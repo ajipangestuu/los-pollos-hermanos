@@ -3,14 +3,14 @@
   <div class="section-home_content">
     <h1 class="section-home_title">Welcome to <span>Los Pollos Hermanos</span>, where Flavors lives!</h1>
     <div class="section-home_buttons">
-      <a href="{% url 'contact' %}" class="primary-button">Contact us</a>
-      <a href="{% url 'about' %}" class="light-button hover-icon-right">
-        About us
+      <a href="#contact" class="primary-button">Contact us</a>
+      <a href="#menus" class="light-button hover-icon-right">
+        Explore
         <i class="bx bx-right-arrow-alt"></i>
       </a>
     </div>
   </div>
-  <img class="section-home_images" src="{% static 'img/gus-new.png' %}" alt="Gus Fring" />
+  <img class="section-home_images" src="{% static 'img/logo-ji.png' %}" alt="Gus Fring" />
 </section>
 <section class="section-menus section-menu" id="menus">
   <h1 class="section-title">Our <span>Menus</span></h1>
@@ -18,8 +18,8 @@
   <div class="section-menus__cards">
     <!--CARD 1-->
     <div class="section-menus__card">
-      <img class="section-menus__card-image" src="{% static 'img/blue-mint.png' %}" alt="Meth" />
-      <h3 class="section-menus__card-title">Blue Meth</h3>
+      <img class="section-menus__card-image" src="{% static 'img/ayam-produk.png' %}" alt="Meth" />
+      <h3 class="section-menus__card-title">Fried Chicken</h3>
       <div class="section-menus__card-rating">
         <i class="bx bxs-star"></i>
         <i class="bx bxs-star"></i>
@@ -28,15 +28,17 @@
         <span>5.1</span>
       </div>
       <div class="section-menus__card-footer">
-        <h2 class="section-menus__card-price">$4.13</h2>
-        <button class="section-menus__card-section--buy primary-button">
-          <i class="bx bxs-cart"></i>
-        </button>
+        <h2 class="section-menus__card-price">Order here</h2>
+        <a href="{% url 'order' %}" style="text-decoration: none; color: inherit">
+          <button class="section-menus__card-section--buy primary-button">
+            <i class="bx bxs-cart"></i>
+          </button>
+        </a>
       </div>
     </div>
     <div class="section-menus__card">
-      <img class="section-menus__card-image" src="{% static 'img/blue-mint.png' %}" alt="Meth" />
-      <h3 class="section-menus__card-title">Blue Meth</h3>
+      <img class="section-menus__card-image" src="{% static 'img/burger-produk.png' %}" alt="Meth" />
+      <h3 class="section-menus__card-title">Burger 77</h3>
       <div class="section-menus__card-rating">
         <i class="bx bxs-star"></i>
         <i class="bx bxs-star"></i>
@@ -45,15 +47,17 @@
         <span>5.1</span>
       </div>
       <div class="section-menus__card-footer">
-        <h2 class="section-menus__card-price">$8.13</h2>
-        <button class="section-menus__card-section--buy primary-button">
-          <i class="bx bxs-cart"></i>
-        </button>
+        <h2 class="section-menus__card-price">Order here</h2>
+        <a href="{% url 'order' %}" style="text-decoration: none; color: inherit">
+          <button class="section-menus__card-section--buy primary-button">
+            <i class="bx bxs-cart"></i>
+          </button>
+        </a>
       </div>
     </div>
     <div class="section-menus__card">
-      <img class="section-menus__card-image" src="{% static 'img/blue-mint.png' %}" alt="Meth" />
-      <h3 class="section-menus__card-title">Blue Meth</h3>
+      <img class="section-menus__card-image" src="{% static 'img/kentang-produk.png' %}" alt="Meth" />
+      <h3 class="section-menus__card-title">French Fries</h3>
       <div class="section-menus__card-rating">
         <i class="bx bxs-star"></i>
         <i class="bx bxs-star"></i>
@@ -62,13 +66,129 @@
         <span>5.1</span>
       </div>
       <div class="section-menus__card-footer">
-        <h2 class="section-menus__card-price">$7.31</h2>
-        <button class="section-menus__card-section--buy primary-button">
-          <i class="bx bxs-cart"></i>
-        </button>
+        <h2 class="section-menus__card-price">Order here</h2>
+        <a href="{% url 'order' %}" style="text-decoration: none; color: inherit">
+          <button class="section-menus__card-section--buy primary-button">
+            <i class="bx bxs-cart"></i>
+          </button>
+        </a>
       </div>
     </div>
   </div>
 </section>
-{% include "components/section-about.html" %}
+<!--SECTION: ABOUT-->
+<section id="about" class="section-about section-menu">
+  <img class="section-about__image" src="{% static 'img/mike.png' %}" alt="" />
+  <div class="section-about__content">
+    <h1 class="section-title">About <span> Us</span></h1>
+    <p class="section-desc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A vel, cumque neque doloremque beatae deleniti, maxime, deserunt laboriosam tenetur ipsam maiores nostrum earum. Asperiores ducimus dolore voluptates itaque dolor aut.
+    </p>
+
+    <div class="section-about__stats">
+      <div class="section-about__stat">
+        <h1 class="section-about__stat-number">3+</h1>
+        <div class="section-about__stat-text">
+          <span class="section-about__stat-desc">Years Of</span>
+          <h3 class="section-about__stat-title">EXPEREINCE</h3>
+        </div>
+      </div>
+      <div class="section-about__stat">
+        <h1 class="section-about__stat-number">15</h1>
+        <div class="section-about__stat-text">
+          <span class="section-about__stat-desc">Best Food Of</span>
+          <h3 class="section-about__stat-title">CONDET</h3>
+        </div>
+      </div>
+    </div>
+
+    <button class="primary-button hover-icon-right">
+      Learn More
+      <i class="bx bx-right-arrow-alt"></i>
+    </button>
+  </div>
+  <img class="section-about__image-background-1" src="{% static 'img/burger-about.png' %}" />
+  <img class="section-about__image-background-2" src="{% static 'img/chiken-about.png' %}" />
+</section>
+<!--SECTION: END ABOUT-->
+<section class="section-services section-menu" id="service">
+  <h1 class="section-title">Our <span>Service</span></h1>
+  <p class="section-desc">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam, dolore molestias vel saepe autem! Architecto odit doloremque cum recusandae impedit inventore ipsum suscipit sed libero possimus, corrupti aliquam nostrum?
+  </p>
+  <div class="section-services_cards">
+    <div class="section-services_card">
+      <div class="section-services_card-icon">
+        <i class="bx bx-bowl-hot"></i>
+      </div>
+      <h1 class="section-services_card-title">Dine in Service</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores quaerat maxime quas nisi!</p>
+    </div>
+    <div class="section-services_card">
+      <div class="section-services_card-icon">
+        <i class="bx bx-package"></i>
+      </div>
+      <h1 class="section-services_card-title">Take Away & Delivery</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores quaerat maxime quas nisi!</p>
+    </div>
+    <div class="section-services_card">
+      <div class="section-services_card-icon">
+        <i class="bx bx-calendar-event"></i>
+      </div>
+      <h1 class="section-services_card-title">Event & Catering</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores quaerat maxime quas nisi!</p>
+    </div>
+  </div>
+</section>
+<!--SECTION: END SERVICES-->
+
+<!--SECTION: CONTACT-->
+<section class="section-contact section-menu" id="contact">
+  <div class="section-title__info">
+    <h1 class="section-title">Contact<span>Us</span></h1>
+    <p class="section-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam exercitationem ratione facilis asperiores veniam? Eveniet velit obcaecati at quia alias doloribus rem quisquam minima quasi?</p>
+    <div class="section-contact__info-items">
+      <div class="section-contact__info-item">
+        <div class="section-contact__info-item-icon">
+          <i class="bx bxs-location-plus"></i>
+        </div>
+        <a href="#" class="section-contact__info-item-link"> Los Pollos Hermanos, Condet Raya, East Jakarta, 1337,Indonesia </a>
+      </div>
+      <div class="section-contact__info-item">
+        <div class="section-contact__info-item-icon">
+          <i class="bx bxl-instagram"></i>
+        </div>
+        <a href="#" class="section-contact__info-item-link">Developer @gwe.ajii</a>
+      </div>
+      <div class="section-contact__info-item">
+        <div class="section-contact__info-item-icon">
+          <i class="bx bxl-twitter"></i>
+        </div>
+        <a href="#" class="section-contact__info-item-link">info.pollos</a>
+      </div>
+    </div>
+  </div>
+  <form action="#" class="section-contact__form">
+    <input type="text" class="text-field" placeholder="Your name dwg" />
+    <input type="email" class="text-field" placeholder="Input Email Here" />
+    <input type="tel" class="text-field" placeholder="nomor wa" />
+    <textarea class="text-field text-field--textarea" placeholder="Message" rows="5"></textarea>
+    <button class="section-contact__form-button secondary-button">Send Message</button>
+  </form>
+</section>
+<!--SECTION: END CONTACT-->
+
+<!--FOOTER-->
+<footer class="footer">
+  <h1 class="footer__title">Los <span> Pollos</span> Hermanos</h1>
+  <ul class="footer__menus">
+    <li class="footer__menus-menu"><a href="#home">Home</a></li>
+    <li class="footer__menus-menu"><a href="#menus">Menus</a></li>
+    <li class="footer__menus-menu"><a href="#about">About</a></li>
+    <li class="footer__menus-menu"><a href="#service">Contact</a></li>
+    <li class="footer__menus-menu"><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer__divider"></div>
+  <p class="footer__copyright">&copy; 2025 Pollos Hermanos All rights reserved. | Developt by jipang</p>
+</footer>
 {% endblock %}

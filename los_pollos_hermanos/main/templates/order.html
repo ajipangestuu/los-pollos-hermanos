@@ -1,0 +1,73 @@
+{% extends "index.html" %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block content %}
+<div class="order-wrapper">
+  {% if success %}
+  <div class="order-alert">Pesanan berhasil dikirim!</div>
+  {% endif %}
+
+  <h2 class="section-title">Menu</h2>
+
+  <div class="menu-grid">
+    {% for menu in menu_list %}
+    <div class="menu-card">
+      {% if menu.gambar %}
+      <img src="{{ menu.gambar.url }}" class="menu-img" alt="{{ menu.nama }}" />
+      {% else %}
+      <img src="{% static 'img/no-image.png' %}" class="menu-img" alt="image" />
+      {% endif %}
+
+      <h3 class="menu-name">{{ menu.nama }}</h3>
+      <p class="menu-price">Rp{{ menu.harga|floatformat:0 }}</p>
+
+      <form method="POST" action="#"">
+        {% csrf_token %}
+        <button type="submit" name="add" value="{{ menu.id }}" class="btn-add">Tambah</button>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-title">Keranjang</h2>
+
+  {% if cart %}
+  <table class="cart-table">
+    <tr>
+      <th>Nama</th>
+      <th>Qty</th>
+      <th>Harga</th>
+      <th>Aksi</th>
+    </tr>
+
+    {% for id, item in cart.items %}
+    <tr>
+      <td>{{ item.nama }}</td>
+      <td>{{ item.qty }}</td>
+      <td>Rp{{ item.harga|floatformat:0 }}</td>
+      <td>
+        <form method="POST" action="#">
+          {% csrf_token %}
+          <button type="submit" name="remove" value="{{ id }}" class="btn-remove">Hapus</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h3 class="total">Total: Rp{{ total|floatformat:0 }}</h3>
+
+  <h3 class="section-title">Checkout</h3>
+  <form method="POST" class="checkout-form">
+    {% csrf_token %}
+    <label>Email:</label>
+    <input type="email" name="email" required class="input-email" />
+    <button type="submit" name="checkout" value="1" class="btn-checkout">Checkout</button>
+  </form>
+
+  {% else %}
+  <p class="empty-cart">Keranjang kosong.</p>
+  {% endif %}
+</div>
+{% endblock %}
