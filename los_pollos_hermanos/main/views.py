@@ -3,6 +3,9 @@ from django.core.mail import send_mail
 from .models import Menu
 from django.urls import reverse
 from django.urls import reverse
+from django.conf import settings
+from django.contrib import messages
+from django.shortcuts import redirect
 
 
 
@@ -12,9 +15,6 @@ def index(request):
 def menus(request):
     menu_list = Menu.objects.all()
     return render(request, 'menus.html', {'menu_list': menu_list})
-
-from django.urls import reverse
-from django.core.mail import send_mail
 
 def order(request):
     menu_list = Menu.objects.all()
@@ -85,3 +85,20 @@ def order(request):
         "total": total,
         "success": success
     })
+
+def contact_send(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        message = request.POST.get("message")
+
+        send_mail(
+            subject="Contact Form - Los Pollos Hermanos",
+            message=f"Nama: {name}\nEmail: {email}\nWA: {phone}\n\n{message}",
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[settings.EMAIL_HOST_USER],
+            fail_silently=False,
+        )
+
+    return redirect("/")  # balik ke index
