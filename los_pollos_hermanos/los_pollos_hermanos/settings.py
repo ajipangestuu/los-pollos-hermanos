@@ -121,17 +121,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 #EMAIL
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+INSTALLED_APPS += ["anymail"]
 
-EMAIL_HOST = "smtp-relay.brevo.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
 
-EMAIL_HOST_USER = "9eee44001@smtp-brevo.com"
-EMAIL_HOST_PASSWORD = os.environ.get("BREVO_SMTP_KEY")
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": os.environ.get("BREVO_SMTP_KEY"),
+}
 
 DEFAULT_FROM_EMAIL = "ajipangesstu165@gmail.com"
-EMAIL_TIMEOUT = 5
 
 
 #UNICORN
