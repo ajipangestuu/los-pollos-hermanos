@@ -131,7 +131,7 @@ EMAIL_HOST_USER = "9eee44001@smtp-brevo.com"
 EMAIL_HOST_PASSWORD = os.environ.get("BREVO_SMTP_KEY")
 
 DEFAULT_FROM_EMAIL = "Los Pollos <noreply@lospollos.com>"
-EMAIL_TIMEOUT = 10
+EMAIL_TIMEOUT = 5
 
 
 #UNICORN

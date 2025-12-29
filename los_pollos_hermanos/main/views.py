@@ -73,12 +73,13 @@ def order(request):
 
         try:
             send_mail(
-                subject,
-                message,
-                settings.DEFAULT_FROM_EMAIL,          # from
-                ["ajipangesstu165@gmail.com"],
-                fail_silently=False,        # to
+                subject=subject,
+                body=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,          # from
+                to=["ajipangesstu165@gmail.com"],     # to
         )
+            email.send(fail_silently=False)
+
         except Exception as e:
             print("EMAIL ERROR", e);
         
