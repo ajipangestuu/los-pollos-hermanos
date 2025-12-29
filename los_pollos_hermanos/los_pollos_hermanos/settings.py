@@ -132,4 +132,17 @@ EMAIL_HOST_PASSWORD = "xsgt ajhg fepr aakn"
 ALLOWED_HOSTS = ["*"]
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://los-pollos-hermanos-production.up.railway.app",
+]
+
+
+ALLOWED_HOSTS = [
+    "los-pollos-hermanos-production.up.railway.app",
+    "localhost",
+    "127.0.0.1",
+]
+
+
+
 
