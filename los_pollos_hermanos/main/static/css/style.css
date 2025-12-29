@@ -524,22 +524,26 @@ html {
 .order-wrapper {
   max-width: 900px;
   margin: auto;
-  padding: 150px;
+  padding: 120px 40px;
 }
 
+/* ALERT */
 .order-alert {
   background: #c8ffc8;
   padding: 12px;
   border-left: 5px solid #32b232;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border-radius: 6px;
 }
 
+/* TITLE */
 .section-title {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
+/* MENU */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -552,7 +556,7 @@ html {
   padding: 15px;
   text-align: center;
   background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .menu-img {
@@ -574,6 +578,7 @@ html {
   margin-bottom: 10px;
 }
 
+/* BUTTONS */
 .btn-add {
   background: #e67e22;
   border: none;
@@ -586,25 +591,6 @@ html {
 
 .btn-add:hover {
   background: #cf6e17;
-}
-
-.divider {
-  margin: 30px 0;
-  border: 0;
-  border-top: 1px solid #ddd;
-}
-
-.cart-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.cart-table th,
-.cart-table td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  text-align: center;
 }
 
 .btn-remove {
@@ -620,40 +606,81 @@ html {
   background: #c0392b;
 }
 
-.total {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-.checkout-form {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 350px;
-}
-
-.input-email {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-}
-
 .btn-checkout {
   background: #27ae60;
   border: none;
-  padding: 10px;
+  padding: 12px;
   color: white;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .btn-checkout:hover {
   background: #1f8c4c;
 }
 
+/* DIVIDER */
+.divider {
+  margin: 35px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* CART */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* TOTAL */
+.total {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* CHECKOUT FORM */
+.checkout-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.checkout-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-email,
+.input-address {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-size: 14px;
+}
+
+.input-address {
+  resize: none;
+  min-height: 90px;
+}
+
+/* EMPTY */
 .empty-cart {
   font-style: italic;
   color: #777;

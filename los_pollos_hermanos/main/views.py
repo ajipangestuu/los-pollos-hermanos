@@ -55,6 +55,7 @@ def order(request):
     success = False
     if request.method == "POST" and "checkout" in request.POST:
         customer_email = request.POST.get("email")
+        alamat = request.POST.get("alamat")
 
         ordered_items = [
             f"{item['nama']} x{item['qty']} = Rp{item['harga']*item['qty']:,}"
@@ -67,6 +68,7 @@ def order(request):
             + "\n".join(ordered_items)
             + f"\n\nTotal: Rp{total:,}\n"
             + f"\nEmail Customer: {customer_email}\n"
+            + f"\nAlamat Pengiriman:\n{alamat}\n"
         )
 
         send_mail(

@@ -56,6 +56,8 @@
     {% endfor %}
   </table>
 
+
+
   <h3 class="total">Total: Rp{{ total|floatformat:0 }}</h3>
 
   <h3 class="section-title">Checkout</h3>
@@ -63,7 +65,19 @@
     {% csrf_token %}
     <label>Email:</label>
     <input type="email" name="email" required class="input-email" />
+     <label>Alamat Pengiriman:</label>
+  <textarea
+    name="alamat"
+    required
+    rows="4"
+    class="input-address"
+    placeholder="Masukkan alamat lengkap (jalan, no rumah, kecamatan, kota)"
+  ></textarea>
+
     <button type="submit" name="checkout" value="1" class="btn-checkout">Checkout</button>
+
+   
+
   </form>
 
   {% else %}
