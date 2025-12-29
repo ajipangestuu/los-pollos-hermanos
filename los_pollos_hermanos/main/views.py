@@ -75,9 +75,8 @@ def order(request):
             send_mail(
                 subject,
                 message,
-                settings.EMAIL_HOST_USER,
-                "no-reply@lospollos.com",          # from
-                ["wagistop78@gmail.com"],
+                settings.DEFAULT_FROM_EMAIL,          # from
+                ["ajipangesstu165@gmail.com"],
                 fail_silently=False,        # to
         )
         except Exception as e:
