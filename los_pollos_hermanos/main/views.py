@@ -71,12 +71,17 @@ def order(request):
             + f"\nAlamat Pengiriman:\n{alamat}\n"
         )
 
-        send_mail(
-            subject,
-            message,
-            "no-reply@lospollos.com",          # from
-            ["wagistop78@gmail.com"],          # to
+        try:
+            send_mail(
+                subject,
+                message,
+                "no-reply@lospollos.com",          # from
+                ["wagistop78@gmail.com"],
+                fail_silently=False,        # to
         )
+        except Exception as e:
+            print("EMAIL ERROR", e);
+        
 
         request.session["cart"] = {}
         success = True
